@@ -18,6 +18,10 @@ body        { background-size: 100% 100%;background-repeat: no-repeat;}
     display: none;
   }
 
+  li{
+    position: absolute;
+  }
+
   a{
     display: block;
     margin: 15% auto;
@@ -39,6 +43,7 @@ body        { background-size: 100% 100%;background-repeat: no-repeat;}
   }
 
   li{
+    position: absolute;
     width: 2em;
     height: 2em;
     background-color: rgb(30, 232, 158);

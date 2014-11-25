@@ -11,7 +11,7 @@
 <template name="pointersList">
   <ul>
     {{#each pointers}}
-      <li>{{_id}}</li>
+      <li id='{id}}' style="left:{{x}}px; top:{{y}}px;">{{_id}}</li>
     {{/each}}
   </ul>
 </template>

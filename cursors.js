@@ -7,7 +7,21 @@ if (Meteor.isClient) {
   Template.pointersList.helpers({
     pointers: function(){
       return Pointer.find({});
+    },
+
+    id: function(){
+      return id._str
+    },
+
+    x: function(){
+      return Pointer.findOne({},{x:1, _id: id._str}).x
+    },
+
+    y: function(){
+      return Pointer.findOne({},{y:1, _id: id._str}).y
     }
+
+
   });
 
   Template.button.rendered = function(){
@@ -28,7 +42,10 @@ if (Meteor.isClient) {
   }
 
   function writeCoordinance(motion){
-    console.log(motion.gamma)
+    var x = (motion.gamma*10).toPrecision(3)
+    var y = (motion.beta*10).toPrecision(3)
+    Pointer.update(id._str, {x: x, y: y})
+    console.log("x: %s | y: %s", x,y)
   }
 
   function startMovementCapture(){
