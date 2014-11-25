@@ -1,0 +1,16 @@
+<head>
+  <title>pointer3</title>
+  <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+  {{> pointersList}}
+</body>
+
+<template name="pointersList">
+  <ul>
+    {{#each pointers}}
+      <li>{{_id}}</li>
+    {{/each}}
+  </ul>
+</template>
